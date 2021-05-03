@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ImageField
 
 
 class TimestampFields(models.Model):
@@ -24,3 +25,4 @@ class Measurement(TimestampFields):
     """Измерение температуры на объекте."""
     value = models.FloatField()
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    img = models.ImageField(blank=True)
